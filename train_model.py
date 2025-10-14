@@ -17,11 +17,17 @@ print(train_data.head())
 print("/n Test data is :")
 print(test_data.head())
 
+# x_train = train_data.drop('label', axis=1).values
+# y_train = train_data['label'].values
+
+# x_test = train_data.drop('label', axis=1).values
+# y_test = train_data['label'].values
+
 x_train = train_data.drop('label', axis=1).values
 y_train = train_data['label'].values
 
-x_test = train_data.drop('label', axis=1).values
-y_test = train_data['label'].values
+x_test = test_data.drop('label', axis=1).values
+y_test = test_data['label'].values
 
 x_train = x_train/ 255.0
 x_test = x_test/ 255.0
