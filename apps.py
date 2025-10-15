@@ -3,8 +3,17 @@ import numpy as np
 import cv2
 from tensorflow.keras.models import load_model
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model = load_model('sign_trained_cnn.h5')
 
